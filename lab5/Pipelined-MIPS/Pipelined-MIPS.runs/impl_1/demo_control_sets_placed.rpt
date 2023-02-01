@@ -1,0 +1,115 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Tue Apr 19 10:47:06 2022
+| Host         : DESKTOP-2M97PUP running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file demo_control_sets_placed.rpt
+| Design       : demo
+| Device       : xc7a35ti
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    37 |
+|    Minimum number of control sets                        |    37 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    17 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    37 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    37 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              24 |            7 |
+| No           | No                    | Yes                    |             235 |           89 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              36 |           10 |
+| Yes          | Yes                   | No                     |            1080 |          465 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------+-----------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |       Enable Signal       |          Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------+-----------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG |                           |                                   |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG | clock_debouncer/CNT       | clock_debouncer/CNT[27]_i_1_n_0   |                8 |             28 |         3.50 |
+|  clk_IBUF_BUFG | reset_debouncer/CNT       | reset_debouncer/CNT[27]_i_1_n_0   |                8 |             28 |         3.50 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[2]0  | mips/dp/pipe5/WriteRegW_reg[3]_0  |               14 |             32 |         2.29 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[4]0  | mips/dp/pipe5/WriteRegW_reg[2]_8  |               21 |             32 |         1.52 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[10]0 | mips/dp/pipe5/WriteRegW_reg[2]_0  |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[12]0 | mips/dp/pipe5/WriteRegW_reg[0]_37 |               12 |             32 |         2.67 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[14]0 | mips/dp/pipe5/WriteRegW_reg[0]_35 |               14 |             32 |         2.29 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[11]0 | mips/dp/pipe5/WriteRegW_reg[2]_7  |               17 |             32 |         1.88 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[15]0 | mips/dp/pipe5/WriteRegW_reg[4]_1  |               15 |             32 |         2.13 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[16]0 | mips/dp/pipe5/WriteRegW_reg[2]_3  |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[18]0 | mips/dp/pipe5/WriteRegW_reg[1]_5  |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[1]0  | mips/dp/pipe5/WriteRegW_reg[1]_7  |               13 |             32 |         2.46 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[20]0 | mips/dp/pipe5/WriteRegW_reg[2]_5  |               13 |             32 |         2.46 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[22]0 | mips/dp/pipe5/WriteRegW_reg[0]_34 |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[23]0 | mips/dp/pipe5/WriteRegW_reg[3]_4  |                8 |             32 |         4.00 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[0]0  | mips/dp/pipe5/WriteRegW_reg[0]_32 |               24 |             32 |         1.33 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[13]0 | mips/dp/pipe5/WriteRegW_reg[0]_36 |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[17]0 | mips/dp/pipe5/WriteRegW_reg[1]_0  |               12 |             32 |         2.67 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[19]0 | mips/dp/pipe5/WriteRegW_reg[2]_6  |               12 |             32 |         2.67 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[21]0 | mips/dp/pipe5/WriteRegW_reg[1]_4  |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[6]0  | mips/dp/pipe5/WriteRegW_reg[3]_1  |               19 |             32 |         1.68 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[31]0 | mips/dp/pipe5/WriteRegW_reg[1]_2  |               24 |             32 |         1.33 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[30]0 | mips/dp/pipe5/WriteRegW_reg[2]_4  |               14 |             32 |         2.29 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[9]0  | mips/dp/pipe5/WriteRegW_reg[3]_2  |               17 |             32 |         1.88 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[26]0 | mips/dp/pipe5/WriteRegW_reg[2]_1  |               15 |             32 |         2.13 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[25]0 | mips/dp/pipe5/WriteRegW_reg[1]_1  |                8 |             32 |         4.00 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[29]0 | mips/dp/pipe5/WriteRegW_reg[3]_3  |               11 |             32 |         2.91 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[3]0  | mips/dp/pipe5/WriteRegW_reg[2]_9  |               12 |             32 |         2.67 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[27]0 | mips/dp/pipe5/WriteRegW_reg[2]_2  |               12 |             32 |         2.67 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[5]0  | mips/dp/pipe5/WriteRegW_reg[1]_6  |               15 |             32 |         2.13 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[24]0 | mips/dp/pipe5/WriteRegW_reg[0]_33 |                9 |             32 |         3.56 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[28]0 | mips/dp/pipe5/WriteRegW_reg[4]_0  |               15 |             32 |         2.13 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[7]0  | mips/dp/pipe5/WriteRegW_reg[3]_5  |               21 |             32 |         1.52 |
+| ~clk_db_BUFG   | mips/dp/pipe5/rf_reg[8]0  | mips/dp/pipe5/WriteRegW_reg[1]_3  |               16 |             32 |         2.00 |
+|  clk_db_BUFG   | mips/dp/pipe3/p_0_in_0    | reset_debouncer/reset_db          |               10 |             36 |         3.60 |
+|  clk_db_BUFG   |                           | reset_debouncer/reset_db          |               89 |            235 |         2.64 |
++----------------+---------------------------+-----------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,7 @@
+0.7
+2020.2
+Jun 10 2021
+20:04:57
+C:/Users/mkucu/Documents/CS224/Lab5/Pipelined-MIPS/Pipelined-MIPS.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/mkucu/Documents/CS224/Lab5/Pipelined-MIPS/Pipelined-MIPS.srcs/sim_1/new/mips_tb.sv,1650219844,systemVerilog,,,,mips_tb,,uvm,,,,,,
+C:/Users/mkucu/Documents/CS224/Lab5/Pipelined-MIPS/Pipelined-MIPS.srcs/sources_1/new/top_mips.sv,1650371723,systemVerilog,,C:/Users/mkucu/Documents/CS224/Lab5/Pipelined-MIPS/Pipelined-MIPS.srcs/sim_1/new/mips_tb.sv,,HazardUnit;PipeDtoE;PipeEtoM;PipeFtoD;PipeMtoW;PipeWtoF;adder;alu;aludec;controller;datapath;dmem;flopr;imem;maindec;mux2;mux4;regfile;signext;sl2;top_mips,,uvm,,,,,,

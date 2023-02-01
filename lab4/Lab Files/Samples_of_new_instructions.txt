@@ -1,0 +1,59 @@
+# Sample execution blocks including new instructions
+
+# To test an instruction, assemble the code block and place it in imem module. 
+# All blocks start at address 0x0
+
+# sracc
+addi $a0, $zero, 5             
+addi $a1, $zero, 7
+addi $a2, $zero, 2
+sracc $a0, $a1, $a2     # $a0 = 7 * 4 + 5 = 33
+
+# bge
+addi $a0, $zero, 3             
+addi $a1, $zero, 12
+addi $a2, $zero, 2
+sub $a1, $a1, $a0
+bge $a1, $a0, -2        # taken 3 times, until $a1 = 0
+add $a2, $a2, $a1       # $a2 = 2 + 0 = 2
+
+# ble
+addi $a0, $zero, 12
+addi $a1, $zero, 3
+addi $a2, $zero, 2
+addi $a1, $a1, 3
+ble $a1, $a0, -2        # taken 3 times, until $a1 = 15
+add $a2, $a2, $a1       # $a2 = 2 + 15 = 17
+
+# jm
+addi $a0, $zero, 0x10
+sw $a0, 0x50($zero)     # Stores 0x10 to address 0x50
+jm 0x50($zero)          # Jumps to address 0x10
+addi $a1, $zero, 3      # Not executed
+addi $a2, $zero, 6      # Jumped to here
+
+# subi
+addi $a0, $zero, 7
+subi $a1, $a0, 3        # $a1 = 7 - 3 = 4
+subi $a2, $a1, 4        # $a2 = 4 - 4 = 0
+
+# sw+
+addi $a0, $zero, 0x50 
+addi $a1, $zero, 1 
+addi $a2, $zero, 16
+beq $a1, $a2, 3         # not taken for $a1 = 1,2,4,8. taken for $a1 = 16
+sw+ $a1, 0($a0)         # stores 1,2,4,8 into 0x50, 0x54, 0x58, 0x5c 
+sll $a1, $a1, 1         # $a1 = $a1 * 2
+j 0xc
+add $a3, $zero, $a0     # $a3 = $a0 = 0x60
+
+# jalm
+addi $ra, $zero, 0
+addi $a0, $zero, 0x14
+sw $a0, 0x50($zero)     # stores 0x14 to address 0x50
+jalm $t0, 0x50($zero)   # jumps to 0x14, sets $t0 = 0x10 (address of next instr.)
+addi $a1, $zero, 3      # not executed
+addi $a2, $zero, 6      # jumped to here
+add $a3, $a2, $t0       # $a3 = 0x6 + 0x10 = 0x16
+
+

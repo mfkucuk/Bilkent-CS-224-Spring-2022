@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35ticpg236-1L" LaunchTime="1650354238">
+  <File Type="PA-TCL" Name="demo.tcl"/>
+  <File Type="REPORTS-TCL" Name="demo_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="demo.msk"/>
+  <File Type="RDI-RDI" Name="demo.vdi"/>
+  <File Type="BG-BIT" Name="demo.bit"/>
+  <File Type="BG-DRC" Name="demo.drc"/>
+  <File Type="BG-BGN" Name="demo.bgn"/>
+  <File Type="BG-BIN" Name="demo.bin"/>
+  <File Type="BITSTR-RBT" Name="demo.rbt"/>
+  <File Type="BITSTR-NKY" Name="demo.nky"/>
+  <File Type="BITSTR-BMM" Name="demo_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="demo.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="demo.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="demo.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-HWDEF" Name="demo.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="demo_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="demo_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="demo_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="demo_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="demo_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="demo_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="demo_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="demo_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="demo_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="demo_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="demo_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="demo_postroute_physopt_bb.dcp"/>
+  <File Type="PDI-FILE" Name="demo.pdi"/>
+  <File Type="RCFI_FILE" Name="demo.rcfi"/>
+  <File Type="CFI_FILE" Name="demo.cfi"/>
+  <File Type="RNPI_FILE" Name="demo.rnpi"/>
+  <File Type="NPI_FILE" Name="demo.npi"/>
+  <File Type="RBD_FILE" Name="demo.rbd"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/display_controller.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pulse_controller.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_mips.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/demo.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="demo"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constraint.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+</GenRun>
